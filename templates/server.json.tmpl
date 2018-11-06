@@ -14,6 +14,9 @@
     "key_file": "/opt/rancher/ssl/consul.key",
     "verify_incoming": true,
     "verify_outgoing": true,
+    "ports": {
+      "https": 8501
+    },
     {{ if (eq (getv "/self/service/metadata/acl.enabled") "true") }}
     "acl_datacenter": "dc1",
     "acl_default_policy": "{{getv "/self/service/metadata/acl.default_policy"}}",
